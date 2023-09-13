@@ -1,0 +1,285 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2023-07-06T16:34:41.920Z",
+    "end": "2023-07-06T16:34:42.578Z",
+    "duration": 658,
+    "testsRegistered": 6,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 5,
+    "hasSkipped": true
+  },
+  "results": [
+    {
+      "uuid": "6bac6d67-7017-4952-9989-f7dcba2b6d1b",
+      "title": "",
+      "fullFile": "cypress/e2e/project.cy.js",
+      "file": "cypress/e2e/project.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "313d27da-1516-4c8c-ba34-9a20382fa460",
+          "title": "iChoveu Project test",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "16ea54f2-a987-4890-b835-45e3cdf71ccb",
+              "title": "1. Implemente a função searchCities",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Verifica se o endpoint está correto",
+                  "fullTitle": "iChoveu Project test 1. Implemente a função searchCities Verifica se o endpoint está correto",
+                  "timedOut": null,
+                  "duration": 570,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.get('#search-input').type('Rio');\ncy.get('#search-button').click();\ncy.get('@fetch').then(fetch => {\n  const firstCall = fetch.args[0][0];\n  expect(firstCall).to.match(/^http:\\/\\/api\\.weatherapi\\.com\\/v1\\/search\\.json/);\n  expect(firstCall).to.include('q=Rio');\n});",
+                  "err": {
+                    "message": "CypressError: `cy.visit()` failed trying to load:\n\nhttp://localhost:5173/\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: connect ECONNREFUSED 127.0.0.1:5173\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `iChoveu Project test`",
+                    "estack": "CypressError: `cy.visit()` failed trying to load:\n\nhttp://localhost:5173/\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: connect ECONNREFUSED 127.0.0.1:5173\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `iChoveu Project test`\n    at http://localhost:41113/__cypress/runner/cypress_runner.js:152359:82\n    at visitFailedByErr (http://localhost:41113/__cypress/runner/cypress_runner.js:151661:12)\n    at http://localhost:41113/__cypress/runner/cypress_runner.js:152358:11\n    at tryCatcher (http://localhost:41113/__cypress/runner/cypress_runner.js:11318:23)\n    at Promise._settlePromiseFromHandler (http://localhost:41113/__cypress/runner/cypress_runner.js:9253:31)\n    at Promise._settlePromise (http://localhost:41113/__cypress/runner/cypress_runner.js:9310:18)\n    at Promise._settlePromise0 (http://localhost:41113/__cypress/runner/cypress_runner.js:9355:10)\n    at Promise._settlePromises (http://localhost:41113/__cypress/runner/cypress_runner.js:9431:18)\n    at _drainQueueStep (http://localhost:41113/__cypress/runner/cypress_runner.js:6025:12)\n    at _drainQueue (http://localhost:41113/__cypress/runner/cypress_runner.js:6018:9)\n    at ../../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:41113/__cypress/runner/cypress_runner.js:6034:5)\n    at Async.drainQueues (http://localhost:41113/__cypress/runner/cypress_runner.js:5904:14)\nFrom Your Spec Code:\n    at Context.eval (http://localhost:41113/__cypress/tests?p=cypress/e2e/project.cy.js:110:8)\n\nFrom Node.js Internals:\n  Error: connect ECONNREFUSED 127.0.0.1:5173\n      at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1157:16)\n  ",
+                    "diff": null
+                  },
+                  "uuid": "49ef28c9-022d-405b-bf73-7155f9dc4522",
+                  "parentUUID": "16ea54f2-a987-4890-b835-45e3cdf71ccb",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Verifica se a página exibe um alerta quando não encontra nenhuma cidade",
+                  "fullTitle": "iChoveu Project test 1. Implemente a função searchCities Verifica se a página exibe um alerta quando não encontra nenhuma cidade",
+                  "timedOut": null,
+                  "duration": 0,
+                  "state": "skipped",
+                  "speed": null,
+                  "pass": false,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.get('#search-input').type('Riacho de fevereiro');\ncy.get('#search-button').click();\ncy.get('@alert').should('have.been.calledWith', 'Nenhuma cidade encontrada');",
+                  "err": {},
+                  "uuid": "418e85c3-8a20-4aaa-94d4-b5d81d776ba9",
+                  "parentUUID": "16ea54f2-a987-4890-b835-45e3cdf71ccb",
+                  "isHook": false,
+                  "skipped": true
+                }
+              ],
+              "suites": [],
+              "passes": [],
+              "failures": [
+                "49ef28c9-022d-405b-bf73-7155f9dc4522"
+              ],
+              "pending": [],
+              "skipped": [
+                "418e85c3-8a20-4aaa-94d4-b5d81d776ba9"
+              ],
+              "duration": 570,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "49b1cfba-2b3a-4091-94eb-d6a02638c303",
+              "title": "2. Implemente a função getWeatherByCity",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Verifica se o endpoint está correto",
+                  "fullTitle": "iChoveu Project test 2. Implemente a função getWeatherByCity Verifica se o endpoint está correto",
+                  "timedOut": null,
+                  "duration": 0,
+                  "state": "skipped",
+                  "speed": null,
+                  "pass": false,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.get('#search-input').type('Rio');\ncy.get('#search-button').click();\ncy.get('@fetch').then(fetch => {\n  _dataMock.RioSearchData.forEach(city => {\n    expect(fetch).to.have.been.calledWithMatch(new RegExp(`^http:\\/\\/api\\.weatherapi\\.com\\/v1\\/current\\.json.*q=${city.url}`));\n  });\n});",
+                  "err": {},
+                  "uuid": "4c1be0e4-7d7e-4dc3-98e9-94a3123e470e",
+                  "parentUUID": null,
+                  "isHook": false,
+                  "skipped": true
+                }
+              ],
+              "suites": [],
+              "passes": [],
+              "failures": [],
+              "pending": [],
+              "skipped": [
+                "4c1be0e4-7d7e-4dc3-98e9-94a3123e470e"
+              ],
+              "duration": 0,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "5d0882b2-5dc8-4df7-bb49-5dac0f1572ba",
+              "title": "3. Liste as cidades retornadas pela API",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Verifica se a lista de cidades é exibida corretamente",
+                  "fullTitle": "iChoveu Project test 3. Liste as cidades retornadas pela API Verifica se a lista de cidades é exibida corretamente",
+                  "timedOut": null,
+                  "duration": 0,
+                  "state": "skipped",
+                  "speed": null,
+                  "pass": false,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.get('#search-input').type('Rio');\ncy.get('#search-button').click();\ncy.get('#cities').children().should('have.length', _dataMock.RioSearchData.length);\ncy.get('#cities').children().each((city, index) => {\n  const expectedData = _dataMock.currentData[_dataMock.RioSearchData[index].url];\n  cy.wrap(city).should('contain', _dataMock.RioSearchData[index].name).should('contain', _dataMock.RioSearchData[index].country).should('contain', expectedData.current.temp_c).should('contain', expectedData.current.condition.text);\n});",
+                  "err": {},
+                  "uuid": "0d05c905-a516-406e-8230-cad3bd84eae9",
+                  "parentUUID": null,
+                  "isHook": false,
+                  "skipped": true
+                }
+              ],
+              "suites": [],
+              "passes": [],
+              "failures": [],
+              "pending": [],
+              "skipped": [
+                "0d05c905-a516-406e-8230-cad3bd84eae9"
+              ],
+              "duration": 0,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "d6d8b7fa-4d5b-4033-9552-dbeab15b2a3b",
+              "title": "4.  Adicione um botão para ver a previsão de 3 dias de uma cidade",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Verifica se o botão é exibido corretamente",
+                  "fullTitle": "iChoveu Project test 4.  Adicione um botão para ver a previsão de 3 dias de uma cidade Verifica se o botão é exibido corretamente",
+                  "timedOut": null,
+                  "duration": 0,
+                  "state": "skipped",
+                  "speed": null,
+                  "pass": false,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.get('#search-input').type('Rio');\ncy.get('#search-button').click();\ncy.get('#cities').children().each(city => {\n  cy.wrap(city).find('button').should('be.visible').should('contain', 'Ver previsão');\n});",
+                  "err": {},
+                  "uuid": "581d1a2e-ed5b-46f4-b27c-2b543bf41626",
+                  "parentUUID": null,
+                  "isHook": false,
+                  "skipped": true
+                },
+                {
+                  "title": "Verifica se é exibido as informações da previsão do tempo da cidade",
+                  "fullTitle": "iChoveu Project test 4.  Adicione um botão para ver a previsão de 3 dias de uma cidade Verifica se é exibido as informações da previsão do tempo da cidade",
+                  "timedOut": null,
+                  "duration": 0,
+                  "state": "skipped",
+                  "speed": null,
+                  "pass": false,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.get('#search-input').type('Rio');\ncy.get('#search-button').click();\ncy.get('#cities').children().first().find('button').click();\ncy.get('#weekdays').should('be.visible').children().each((day, index) => {\n  const expectedData = _dataMock.RioForecastData.forecast.forecastday[index];\n  cy.wrap(day).should('contain', expectedData.day.maxtemp_c).should('contain', expectedData.day.mintemp_c).should('contain', expectedData.day.condition.text);\n});",
+                  "err": {},
+                  "uuid": "af26d074-544c-420c-aee0-78af2a6aecc0",
+                  "parentUUID": null,
+                  "isHook": false,
+                  "skipped": true
+                }
+              ],
+              "suites": [],
+              "passes": [],
+              "failures": [],
+              "pending": [],
+              "skipped": [
+                "581d1a2e-ed5b-46f4-b27c-2b543bf41626",
+                "af26d074-544c-420c-aee0-78af2a6aecc0"
+              ],
+              "duration": 0,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports",
+        "overwrite": true,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
